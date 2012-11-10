@@ -1,0 +1,103 @@
+<HTML>
+<!-- This document was created with HTMLed        -->
+<!-- Author: Unlicensed User                      -->
+<!-- Date:   11/4/97                              -->
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+
+<BODY bgcolor="ffffff" link="f76b10" vlink="000000">
+<p><font color="f76b10"><b>JShop Instructions</b></font>
+<font size=-1>
+<br>(These instructions are also in the JShop .zip file)
+
+<p><b>DISCLAIMER.</b> This software is provided as-is and as such Whorl can not be
+held responsible for loss of business or information through its use. Every
+effort has been made to verify its fitness for purpose.
+
+
+<p><font color="f76b10"><b>Contents</b></font>
+
+<br><li>What is JShop?
+<li>Is JShop free to use?
+<li>How do I set up JShop?
+<li>Can I get help from Whorl?
+
+
+<p><font color="f76b10"><b>What is JShop?</b></font>
+
+
+<br>JShop is a World Wide Web shopping basket application that allows you to sell
+products over the Internet. People browse your pages of items, adding those
+they'd like to their basket and when they've finished all they have to do is
+enter their credit card details etc. to send the order.
+
+<p>With JShop customers can also review their shopping basket at any time,
+removing items or starting completely afresh again.
+
+<p>JShop is client-side, written in JavaScript, meaning that there's no hard
+churning work for your server and things run much faster. It also makes use
+of cookies, so there's no external files to worry about either.
+
+
+<p><font color="f76b10"><b>Is JShop free to use?</b></font>
+
+<br>Yes! We'd like to see everybody start to use JShop as we think it's a lot
+easier (and faster) than most on-line shopping basket applications out there.
+Feel free to change the code to suit your particular needs but if you do use
+it on your site please include a mention of it being written by Whorl
+(and a link, please!) and let us know, so we can include you on our list of
+people using the software. Now, that's not too much to ask is it.
+
+
+<p><font color="f76b10"><b>How do I set up JShop?</b></font>
+
+<br>JShop is built around six HTML files as follows:
+
+<p>index.htm - sets up the two frames needed for the shopping basket
+<br>bmenu.htm - menu of options for the shopping basket (bottom frame)
+<br>bitem.htm - a page containing some dummy items (more about this in a minute)
+<br>bbasket.htm - page which displays the contents of the basket etc.
+<br>bbuy.htm - first stage of ordering, this then should go to another page on a secure server for entering credit card details etc.
+<br>bfinish.htm - the final ordering page which would normally reside on a secure server for the user to enter their credit card details
+
+<p>The index file sets up two frames, the bottom one called 'menu' (which should
+be left as menu in order for the JavaScript routines to work) and a top one
+called 'main'. At the moment index.htm is set up to load bmenu.htm into the
+bottom frame (which should not be changed) and bitem.htm into the top frame
+(this can be changed if you wish).
+
+<p>bitem.htm calls routines for adding items to the shopping basket from
+bmenu.htm. What ever way you set up your items on these pages the function
+you need to call in order to add items to the shopping basket is buyItem().
+It can either be used as a link:
+
+<p>&lt;A HREF="javascript:top.menu.buyItem(product,price,quantity)"&gt;Buy&lt;/A&gt;
+
+<p>or as an onClick statement on a form button:
+
+<p>&lt;INPUT TYPE=BUTTON onClick="javascript:top.menu.buyItem(prod,price,quant)"&gt;
+
+<p>You'll notice in the code that quantities are picked up from a form box. For instance, the quantity box for the first item is called cbtquant. So all you have to do is pick up the value in that box when you call buyItem().
+
+<p>top.menu.buyItem('Chemical Brothers T-Shirt','15.95', document.itemsform.cbtquant.value)
+
+<p>Finally, in bbuy.htm and bfinish.htm you'll have to amend the FORM tag in order to point to your correct form mailing script. Contact your web space provider for more details if you're not sure or contact us and we'll try and help you out.
+
+<p>And that's really all there is to it. There is some commenting in the code to
+help you understand what's happening.
+
+<p><font color="f76b10"><b>Can I get help from Whorl?</b></font>
+
+<br>If you're having trouble setting up JShop or need some advise then we can
+offer some via. email at <a href="mailto:enquiry@jshop.co.uk">enquiry@jshop.co.uk</a>. If you'd like Whorl to set up and manage your on-line shopping basket please contact us so we can
+discuss your needs. We can offer reasonable quotes for doing so.
+
+
+<p>Written by Gareth Lancaster (6th June 1997)
+<br>email: <a href="mailto:gareth@whorl.co.uk">gareth@whorl.co.uk</a>
+
+</font>
+<p><font size=-2>JShop is &copy; 1997, <a href="http://www.whorl.co.uk/">Whorl</a></font></center>
+</BODY>
+</HTML>
